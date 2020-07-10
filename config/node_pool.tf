@@ -8,7 +8,6 @@ resource "google_container_node_pool" "primary_nodes" {
 
  // parameters used in creating the default node pool
   node_config {
-    preemptible  = false
     machine_type = var.machine_type
 
      metadata = {
@@ -18,6 +17,7 @@ resource "google_container_node_pool" "primary_nodes" {
     oauth_scopes = [
       "https://www.googleapis.com/auth/logging.write",
       "https://www.googleapis.com/auth/monitoring",
+      "https://www.googleapis.com/auth/devstorage.read_only",
     ]
   }
 
