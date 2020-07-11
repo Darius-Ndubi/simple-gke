@@ -5,7 +5,7 @@ provider "google" {
 
 terraform {
   backend "gcs" {
-    bucket = "todo-app-infra"
+    bucket = "app-infra-storage"
     prefix = "/state"
   }
 }
@@ -18,4 +18,6 @@ module "gke" {
   location     = var.location
   cluster_name = var.cluster_name
   machine_type = var.machine_type
+  min_nodes    = var.min_nodes
+  max_nodes    = var.max_nodes
 }

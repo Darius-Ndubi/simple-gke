@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: ${_APPLICATION_NAME}-${_APPLICATION_NAMESPACE}
-        image: gcr.io/$_GOOGLE_CLOUD_PROJECT/${_APPLICATION_NAME}-${_APPLICATION_NAMESPACE}:${SHORT_SHA}
+        image: gcr.io/$_GOOGLE_CLOUD_PROJECT/${_APPLICATION_NAME}-${_APPLICATION_NAMESPACE}:$SHORT_SHA
         resources:
             limits:
               cpu: ${_MAX_CPU}

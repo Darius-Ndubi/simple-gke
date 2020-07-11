@@ -1,4 +1,4 @@
-apiVersion: autoscaling/v2beta1
+apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: ${_APPLICATION_NAME}-${_APPLICATION_NAMESPACE}
@@ -10,10 +10,4 @@ spec:
     name: ${_APPLICATION_NAME}-${_APPLICATION_NAMESPACE}
   minReplicas: ${_MIN_PODS}
   maxReplicas: ${_MAX_PODS}
-  metrics:
-    - type: Resource
-      resource:
-        name: cpu
-        target:
-          type: Utilization
-          averageUtilization: 70
+  targetCPUUtilizationPercentage: 70
