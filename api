@@ -1,0 +1,6 @@
+  - host: ${_HOST_DOMAIN_API}
+    http:
+      paths:
+      - backend:
+          serviceName: ${_APPLICATION_NAME_API}-service-${_APPLICATION_NAMESPACE}
+          servicePort: 80
